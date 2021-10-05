@@ -76,23 +76,63 @@
 		6D695E1E270B6087008BA0E8 /* GOT */ = {
 			isa = PBXGroup;
 			children = (
-				6D695E1F270B6087008BA0E8 /* AppDelegate.swift */,
 				6D695E21270B6087008BA0E8 /* SceneDelegate.swift */,
-				6D695E23270B6087008BA0E8 /* ViewController.swift */,
-				6D695E48270BAB41008BA0E8 /* DetailViewController.swift */,
-				6D695E25270B6087008BA0E8 /* Main.storyboard */,
-				6D695E28270B608A008BA0E8 /* Assets.xcassets */,
-				6D695E2A270B608A008BA0E8 /* LaunchScreen.storyboard */,
+				6D695E1F270B6087008BA0E8 /* AppDelegate.swift */,
+				6D72B894270BCF1D007E719C /* Assets */,
+				6D72B893270BCEFE007E719C /* VC */,
+				6D72B896270BCF64007E719C /* Model */,
+				6D72B897270BCF82007E719C /* View */,
+				6D72B898270BCF9C007E719C /* Utils */,
 				6D695E2D270B608A008BA0E8 /* Info.plist */,
-				6D695E33270B6277008BA0E8 /* SimpleTableViewCell.swift */,
-				6D695E34270B6277008BA0E8 /* SimpleTableViewCell.xib */,
-				6D695E37270B6536008BA0E8 /* Episode.swift */,
-				6D695E39270B6543008BA0E8 /* EpisodeRequest.swift */,
-				6D695E40270B7266008BA0E8 /* DetailedTableViewCell.swift */,
-				6D695E41270B7266008BA0E8 /* DetailedTableViewCell.xib */,
-				6D695E44270B9A64008BA0E8 /* Extension.swift */,
 			);
 			path = GOT;
+			sourceTree = "<group>";
+		};
+		6D72B893270BCEFE007E719C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6D695E23270B6087008BA0E8 /* ViewController.swift */,
+				6D695E48270BAB41008BA0E8 /* DetailViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		6D72B894270BCF1D007E719C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6D695E28270B608A008BA0E8 /* Assets.xcassets */,
+				6D695E2A270B608A008BA0E8 /* LaunchScreen.storyboard */,
+				6D695E25270B6087008BA0E8 /* Main.storyboard */,
+				6D695E34270B6277008BA0E8 /* SimpleTableViewCell.xib */,
+				6D695E41270B7266008BA0E8 /* DetailedTableViewCell.xib */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6D72B896270BCF64007E719C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D695E37270B6536008BA0E8 /* Episode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D72B897270BCF82007E719C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D695E33270B6277008BA0E8 /* SimpleTableViewCell.swift */,
+				6D695E40270B7266008BA0E8 /* DetailedTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D72B898270BCF9C007E719C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D695E39270B6543008BA0E8 /* EpisodeRequest.swift */,
+				6D695E44270B9A64008BA0E8 /* Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
