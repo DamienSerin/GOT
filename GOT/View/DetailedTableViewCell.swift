@@ -15,10 +15,13 @@ class DetailedTableViewCell: UITableViewCell {
         return UINib(nibName: "DetailedTableViewCell", bundle: nil)
     }
     
-    public func configure(with epName: String, epNumber: String, epSummary: String){
+    public func configure(with epName: String, epNumber: String, epSummary: String, imgUrl: URL){
         episodeName.text = epName
         episodeNumber.text = epNumber
         episodeSummary.text = epSummary
+        
+        coverImage.sd_setImage(with: imgUrl)
+        
         labelContainer.layer.cornerRadius = 10
         
         labelContainer.layer.shadowColor = UIColor.black.cgColor
@@ -34,6 +37,9 @@ class DetailedTableViewCell: UITableViewCell {
     @IBOutlet weak var labelContainer: UIView!
     
 
+    func viewDidLayoutSubviews(){
+            
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

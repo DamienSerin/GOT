@@ -56,18 +56,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let originalImageUrl = URL(string: episode.image.original) else {fatalError()}
         guard let decodedSummary = String(htmlEncodedString: episode.summary) else {fatalError()}
         
-        if indexPath.row == 0 {
-            detailedeCell.configure(with: episode.name, epNumber: episodeRef, epSummary: decodedSummary)
-            detailedeCell.coverImage.sd_setImage(with: originalImageUrl)
+        if indexPath.row == 0 || (indexPath.row)%5 == 0 {
+            detailedeCell.configure(with: episode.name, epNumber: episodeRef, epSummary: decodedSummary, imgUrl: originalImageUrl)
             return detailedeCell
         }
-        if (indexPath.row)%5 == 0 {
-            detailedeCell.configure(with: episode.name, epNumber: episodeRef, epSummary: decodedSummary)
-            detailedeCell.coverImage.sd_setImage(with: originalImageUrl)
-            return detailedeCell
-        }
-        simpleCell.configure(with: episode.name, epNumber: episodeRef)
-        simpleCell.coverImage.sd_setImage(with: mediumImageUrl)
+        simpleCell.configure(with: episode.name, epNumber: episodeRef, imgUrl: mediumImageUrl)
         return simpleCell
     }
     
@@ -95,4 +88,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-

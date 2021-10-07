@@ -15,9 +15,10 @@ class SimpleTableViewCell: UITableViewCell {
         return UINib(nibName: "SimpleTableViewCell", bundle: nil)
     }
     
-    public func configure(with epName: String, epNumber: String){
+    public func configure(with epName: String, epNumber: String, imgUrl: URL){
         episodeName.text = epName
         episodeNumber.text = epNumber
+        coverImage.sd_setImage(with: imgUrl)
     }
     
     @IBOutlet var coverImage: UIImageView!

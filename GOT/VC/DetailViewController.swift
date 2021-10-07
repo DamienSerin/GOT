@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var coverImage: UIImageView!
 
     
-    
     var epName = String()
     var epSummary = String()
     var epRuntime = String()
