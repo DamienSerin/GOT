@@ -15,34 +15,27 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelSummary: UILabel!
     @IBOutlet weak var coverImage: UIImageView!
 
-    
-    var epName = String()
-    var epSummary = String()
-    var epRuntime = String()
-    var epAirDate = String()
-    var epAirTime = String()
-    var epImgUrl = String()
-    var epUrl = String()
+    var episode = EpisodeDetail(id: 0, url: "", name: "", season: 0, number: 0, airdate: "", airtime: "", runtime: 0, image: ImageLinks(medium: "", original: ""), summary: "")
     
     override func viewWillAppear(_ animated: Bool){
-        labelEpName.text = epName
-        
+        labelEpName.text = episode.name
         
         labelRunTime.attributedText =
             NSMutableAttributedString()
             .appendWith(weight: .regular, "Durée: ")
-            .appendWith(weight: .semibold, "\(epRuntime) min")
+            .appendWith(weight: .semibold, "\(episode.runtime) min")
         
         labelAirTime.attributedText =
             NSMutableAttributedString()
             .appendWith(weight: .regular, "Paru le: ")
-            .appendWith(weight: .semibold, "\(epAirDate)")
+            .appendWith(weight: .semibold, "\(episode.airdate)")
             .appendWith(weight: .regular, " à ")
-            .appendWith(weight: .semibold, "\(epAirTime )")
+            .appendWith(weight: .semibold, "\(episode.airtime)")
         
-        labelSummary.text = epSummary
+        guard let decodedSummary = String(htmlEncodedString: episode.summary) else {fatalError()}
+        labelSummary.text = decodedSummary
         
-        guard let imageUrl = URL(string: epImgUrl) else {fatalError()}
+        guard let imageUrl = URL(string: episode.image.original) else {fatalError()}
         coverImage.sd_setImage(with: imageUrl)
     }
     
@@ -52,7 +45,7 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func didTapeButton(_ sender: UIButton) {
-        guard let url = URL(string: epUrl) else {fatalError()}
+        guard let url = URL(string: episode.url) else {fatalError()}
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:])
          }

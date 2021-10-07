@@ -28,9 +28,28 @@ struct EpisodeDetail:Decodable{
     var image: ImageLinks
     var summary: String
     
+    init(id: Int, url: String, name: String, season: Int, number: Int, airdate: String, airtime: String, runtime: Int, image: ImageLinks, summary: String){
+        self.id = id
+        self.url = url
+        self.name = name
+        self.season = season
+        self.number = number
+        self.airdate = airdate
+        self.airtime = airtime
+        self.runtime = runtime
+        self.image = image
+        self.summary = summary
+        
+    }
+    
 }
 
 struct ImageLinks: Decodable {
     var medium: String
     var original: String
+    
+    init(medium: String, original: String){
+        self.medium = medium
+        self.original = original
+    }
 }

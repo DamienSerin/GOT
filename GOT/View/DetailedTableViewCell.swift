@@ -35,21 +35,8 @@ class DetailedTableViewCell: UITableViewCell {
     @IBOutlet var episodeNumber: UILabel!
     @IBOutlet var episodeSummary: UILabel!
     @IBOutlet weak var labelContainer: UIView!
-    
 
-    func viewDidLayoutSubviews(){
-            
-    }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     
 }

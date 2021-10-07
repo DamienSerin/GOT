@@ -75,15 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let selectedRow = indexPath.row
                 
                 let episode = listOfEpisodes[selectedRow]
-                
-                guard let decodedSummary = String(htmlEncodedString: episode.summary) else {fatalError()}
-                destination.epName  = episode.name
-                destination.epSummary = decodedSummary
-                destination.epRuntime = String(episode.runtime)
-                destination.epAirDate = episode.airdate
-                destination.epAirTime = episode.airtime
-                destination.epImgUrl = episode.image.original
-                destination.epUrl = episode.url
+                destination.episode = episode
             }
         }
     }
